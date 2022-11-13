@@ -9,7 +9,10 @@ pipeline {
                echo "Testing"
                """
                sh "echo '${WORKSPACE}'"
-               sh "python3 tests/test.py"
+               sh """
+               python --version
+               python tests/test.py
+               """
            }
        }
       stage('Deployment Stage') {
