@@ -10,8 +10,8 @@ pipeline {
                """
                sh "echo '${WORKSPACE}'"
                sh """
-               python --version
-               python tests/test.py
+               python3 --version
+               python3 tests/test.py
                """
            }
        }
