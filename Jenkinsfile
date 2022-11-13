@@ -18,8 +18,9 @@ pipeline {
        }
       stage('Deployment Stage') {
           steps {
+               sh "cd '${WORKSPACE}'/"
                sh "sudo virtualenv --python=/usr/bin/python3 venv"
-               sh "source venv/bin/activate" 
+               sh ". venv/bin/activate" 
                sh "pip3 install -r requirements.txt"
                sh "sudo docker-compose up -d --build"
           }
