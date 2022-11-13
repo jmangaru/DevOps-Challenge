@@ -10,17 +10,15 @@ pipeline {
                """
                sh "echo '${WORKSPACE}'"
                sh """
-               python --version
-               python tests/tjst.py
+               python3 --version
+               python3 tests/test.py
                """
                sh "python3 tests/test.py"
            }
        }
       stage('Deployment Stage') {
           steps {
-               sh """
-               echo "Building"
-               """
+               sh "docker-compose up --build"
           }
       }
    }
