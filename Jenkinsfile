@@ -11,7 +11,7 @@ pipeline {
                         """
                         sh "echo '${WORKSPACE}'"
                         sh """
-                            python3 tests/test.py
+                            python3 tests/tesot.py
                         """
                     }
                 }
